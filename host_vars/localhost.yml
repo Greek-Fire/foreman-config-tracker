@@ -2,5 +2,7 @@ ansible_port: 2222
 ansible_user: greekfire
 ansible_password: redhat
 watch_path:
-- /etc/ssh/sshd_config
-- /etc/my_test_config.conf
+- path: /etc/ssh/sshd_config
+  name: sshd_config
+- path: /etc/my_test_config.conf
+  name: my_test_config
