@@ -1,2 +1,2 @@
 audit_key_prefix: "foreman-config-tracker"
-log_file: /var/log/foreman-config-tracker.log
+log_file_path: /var/log/foreman-config-tracker.log
