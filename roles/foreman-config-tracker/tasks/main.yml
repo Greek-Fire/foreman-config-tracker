@@ -2,7 +2,7 @@
 - name: Ensure required packages are present
   ansible.builtin.package:
     name:
-      - audit
+      - auditd
       - curl
     state: present
 
@@ -24,16 +24,16 @@
 
 - name: Deploy forwarder script
   ansible.builtin.template:
-    src: foreman-config-forwarder.sh.j2
-    dest: /usr/local/bin/foreman-config-forwarder.sh
+    src: foreman-config-tracker-forwarder.sh.j2
+    dest: /usr/local/bin/foreman-config-tracker-forwarder.sh
     mode: '0750'
     owner: root
     group: root
 
 - name: Deploy dispatcher plugin
   ansible.builtin.template:
-    src: foreman-config-forwarder.conf.j2
-    dest: /etc/audisp/plugins.d/foreman-config-forwarder.conf
+    src: foreman-config-tracker-dispatch.conf.j2
+    dest: /etc/audit/plugins.d/foreman-config-tracker-dispatch.conf
     owner: root
     group: root
     mode: '0644'
@@ -46,7 +46,7 @@
     group: root
     mode: '0640'
   notify:
-    - reload auditd
+    - reload auditd rules
     - restart auditd
 
 - name: Ensure auditd is enabled and running

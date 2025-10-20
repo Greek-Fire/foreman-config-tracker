@@ -1,5 +1,7 @@
-ansible_port: 2222
 ansible_user: greekfire
+ansible_become_password: redhat
+ansible_become: true
+ansible_host: 192.168.56.101 
 ansible_password: redhat
 watch_path:
 - path: /etc/ssh/sshd_config

@@ -7,4 +7,3 @@
   ansible.builtin.systemd:
     name: auditd
     state: restarted
-  listen: restart auditd

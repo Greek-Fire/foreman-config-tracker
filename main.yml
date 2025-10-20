@@ -1,0 +1,4 @@
+- name: Watch configuration files
+  hosts: all
+  roles:
+  - role: foreman-config-tracker
