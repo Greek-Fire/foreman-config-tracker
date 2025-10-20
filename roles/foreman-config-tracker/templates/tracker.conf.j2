@@ -1,0 +1,15 @@
+# /etc/foreman-config-tracker/tracker.conf
+# ==========================================
+# Foreman Config Tracker Configuration
+
+WATCH_PATHS=(
+{% for path in watch_path %}
+  "{{ path }}"
+{% endfor %}
+)
+
+FORWARDER_SCRIPT="/usr/local/bin/foreman-config-forwarder.sh"
+FOREMAN_API_URL="{{ foreman_api_url }}"
+FOREMAN_API_TOKEN="{{ foreman_api_token }}"
+LOG_FILE="/var/log/foreman-config-tracker.log"
+AUDIT_KEY_PREFIX="foreman-config-forwarder"
