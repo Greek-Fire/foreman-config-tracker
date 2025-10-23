@@ -8,3 +8,5 @@ watch_path:
   name: sshd_config
 - path: /etc/my_test_config.conf
   name: my_test_config
+- path: /etc/another_config.conf
+  name: another_config

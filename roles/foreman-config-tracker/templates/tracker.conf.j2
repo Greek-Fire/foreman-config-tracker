@@ -2,6 +2,8 @@
 # ==========================================
 # Foreman Config Tracker Configuration
 
-FORWARDER_SCRIPT="/usr/local/bin/foreman-config-tracker-forwarder.sh"
-
-LOG_FILE="{{ log_file_path }}"
+FORWARDER_SCRIPT: "/usr/local/bin/fct-inotify.py
+LOG_FILE: "/var/log/inotify_events.log"
+WATCH_PATHS:
+  - "/etc/ssh/sshd_config"
+  - "/etc/my_test_config.conf"
